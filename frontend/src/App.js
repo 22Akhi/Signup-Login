@@ -1,20 +1,24 @@
 
 import './App.css';
-import Header from './components/Header';
-import { Outlet } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import React from 'react';
+import Login from './page/Login';
+// import Header from './components/Header';
+// import { Outlet } from 'react-router-dom';
+// import toast, { Toaster } from 'react-hot-toast';
+import  Signup  from './page/Signup';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+
 
 function App() {
   return (
-   <>
-      <Toaster />
-   <div>
-   <Header/>
-   <main className = 'pt-16 bg-slate-100 min-h-[calc(100vh)] '>
-    <Outlet/>
-   </main>
-   </div>
-   </>
+//  <BrowserRouter>
+ <Routes>
+  <Route path = '/' element = { <Signup />} ></Route>
+  <Route path = '/login' element = {<Login />}></Route>
+  <Route path = '/signup' element = {<Signup />}></Route>
+ </Routes>
+//  </BrowserRouter>
   );
 }
 
